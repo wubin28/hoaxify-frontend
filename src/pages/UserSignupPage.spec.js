@@ -40,5 +40,10 @@ describe('UserSignUpPage', () => {
             const passwordRepeat = queryByPlaceholderText('Repeat your password');
             expect(passwordRepeat.type).toBe('password');
         });
+        it('has submit button', () => {
+            const { container } = render(<UserSignUpPage />);
+            const button = container.querySelector('button');
+            expect(button).toBeInTheDocument()
+        })
     });
 });

@@ -20,5 +20,10 @@ describe('UserSignUpPage', () => {
             const usernameInput = queryByPlaceholderText('Your username');
             expect(usernameInput).toBeInTheDocument();
         });
+        it('has input for password', () => {
+            const { queryByPlaceholderText } = render(<UserSignUpPage />);
+            const passwordInput = queryByPlaceholderText('Your password');
+            expect(passwordInput).toBeInTheDocument();
+        });
     });
 });

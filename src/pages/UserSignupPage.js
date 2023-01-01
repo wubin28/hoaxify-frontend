@@ -12,7 +12,7 @@ export class UserSignUpPage extends React.Component {
                     <input placeholder="Your username" />
                 </div>
                 <div>
-                    <input placeholder="Your password" />
+                    <input placeholder="Your password" type="password" />
                 </div>
             </div>
         );

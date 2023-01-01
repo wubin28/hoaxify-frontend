@@ -8,6 +8,9 @@ export class UserSignUpPage extends React.Component {
                 <div>
                     <input placeholder="Your display name" />
                 </div>
+                <div>
+                    <input placeholder="Your username" />
+                </div>
             </div>
         );
     }

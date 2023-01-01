@@ -5,8 +5,11 @@ export class UserSignUpPage extends React.Component {
         return (
             <div>
                 <h1>Sign Up</h1>
+                <div>
+                    <input placeholder="Your display name" />
+                </div>
             </div>
-        )
+        );
     }
 }
 

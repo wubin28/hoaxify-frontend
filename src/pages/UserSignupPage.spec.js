@@ -71,5 +71,13 @@ describe('UserSignUpPage', () => {
 
             expect(usernameInput).toHaveValue('my-user-name');
         });
+        it('sets the password value into state', () => {
+            const {queryByPlaceholderText} = render(<UserSignUpPage/>);
+            const passwordInput = queryByPlaceholderText('Your password');
+
+            fireEvent.change(passwordInput, changeEvent('P4ssword'));
+
+            expect(passwordInput).toHaveValue('P4ssword');
+        });
     });
 });

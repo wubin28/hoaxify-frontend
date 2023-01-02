@@ -25,6 +25,10 @@ export class UserSignUpPage extends React.Component {
         this.setState({passwordRepeat: value})
     };
 
+    onClickSignUp = () => {
+        this.props.actions.postSignUp();
+    }
+
     render() {
         return (
             <div>
@@ -56,7 +60,7 @@ export class UserSignUpPage extends React.Component {
                     />
                 </div>
                 <div>
-                    <button>Sign Up</button>
+                    <button onClick={this.onClickSignUp}>Sign Up</button>
                 </div>
             </div>
         );

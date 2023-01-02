@@ -5,6 +5,7 @@ export class UserSignUpPage extends React.Component {
         displayName: '',
         username: '',
         password: '',
+        passwordRepeat: ''
     };
 
     onChangeDisplayName = (event) => {
@@ -18,6 +19,10 @@ export class UserSignUpPage extends React.Component {
     onChangePassword = (event) => {
         const value = event.target.value;
         this.setState({password: value})
+    };
+    onChangePasswordRepeat = (event) => {
+        const value = event.target.value;
+        this.setState({passwordRepeat: value})
     };
 
     render() {
@@ -44,7 +49,11 @@ export class UserSignUpPage extends React.Component {
                     />
                 </div>
                 <div>
-                    <input placeholder="Repeat your password" type="password"/>
+                    <input placeholder="Repeat your password"
+                           type="password"
+                           value={this.state.passwordRepeat}
+                           onChange={this.onChangePasswordRepeat}
+                    />
                 </div>
                 <div>
                     <button>Sign Up</button>

@@ -26,9 +26,7 @@ export class UserSignUpPage extends React.Component {
     };
 
     onClickSignUp = () => {
-        if (this.props.actions) {
-            this.props.actions.postSignUp();
-        }
+        this.props.actions.postSignUp();
     }
 
     render() {
@@ -68,5 +66,14 @@ export class UserSignUpPage extends React.Component {
         );
     }
 }
+
+UserSignUpPage.defaultProps = {
+    actions: {
+        postSignUp: () =>
+            new Promise((resolve, reject) => {
+                resolve({});
+            })
+    }
+};
 
 export default UserSignUpPage;

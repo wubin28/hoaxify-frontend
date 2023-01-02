@@ -26,7 +26,12 @@ export class UserSignUpPage extends React.Component {
     };
 
     onClickSignUp = () => {
-        this.props.actions.postSignUp();
+        const user = {
+            username: this.state.username,
+            displayName: this.state.displayName,
+            password: this.state.password
+        }
+        this.props.actions.postSignUp(user);
     }
 
     render() {

@@ -119,10 +119,24 @@ describe('UserSignUpPage', () => {
             fireEvent.click(button);
 
             expect(actions.postSignUp).toHaveBeenCalledTimes(1);
-        })
+        });
         it('does not throw exception when clicking the button when actions not provided in props', () => {
             const {container, queryByPlaceholderText} = setupForSubmit();
             expect(() => fireEvent.click(button)).not.toThrow();
-        })
+        });
+        it('calls post when user body when the fields are valid', () => {
+            const actions = {
+                postSignUp: jest.fn().mockResolvedValueOnce({})
+            }
+            setupForSubmit({actions});
+            fireEvent.click(button);
+            const expectedUserObject = {
+                username: 'my-user-name',
+                displayName: 'my-display-name',
+                password: 'P4ssword'
+            }
+
+            expect(actions.postSignUp).toHaveBeenCalledWith(expectedUserObject);
+        });
     });
 });

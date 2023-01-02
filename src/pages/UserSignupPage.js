@@ -26,7 +26,9 @@ export class UserSignUpPage extends React.Component {
     };
 
     onClickSignUp = () => {
-        this.props.actions.postSignUp();
+        if (this.props.actions) {
+            this.props.actions.postSignUp();
+        }
     }
 
     render() {

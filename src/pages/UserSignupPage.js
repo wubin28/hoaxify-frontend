@@ -7,7 +7,7 @@ export class UserSignUpPage extends React.Component {
 
     onChangeDisplayName = (event) => {
         const value = event.target.value;
-        this.setState({ displayName: value})
+        this.setState({displayName: value})
     };
 
     render() {
@@ -21,13 +21,13 @@ export class UserSignUpPage extends React.Component {
                     />
                 </div>
                 <div>
-                    <input placeholder="Your username" />
+                    <input placeholder="Your username"/>
                 </div>
                 <div>
-                    <input placeholder="Your password" type="password" />
+                    <input placeholder="Your password" type="password"/>
                 </div>
                 <div>
-                    <input placeholder="Repeat your password" type="password" />
+                    <input placeholder="Repeat your password" type="password"/>
                 </div>
                 <div>
                     <button>Sign Up</button>

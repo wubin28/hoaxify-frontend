@@ -47,15 +47,19 @@ describe('UserSignUpPage', () => {
         })
     });
     describe('Interactions', () => {
+        const changeEvent = (content) => {
+            return {
+                target: {
+                    value: content
+                }
+            };
+        };
+
         it('sets the displayName value into state', () => {
             const {queryByPlaceholderText} = render(<UserSignUpPage/>);
             const displayNameInput = queryByPlaceholderText('Your display name');
-            const changeEvent = {
-                target: {
-                    value: 'my-display-name'
-                }
-            }
-            fireEvent.change(displayNameInput, changeEvent);
+
+            fireEvent.change(displayNameInput, changeEvent('my-display-name'));
 
             expect(displayNameInput).toHaveValue('my-display-name');
         });

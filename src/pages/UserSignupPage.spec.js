@@ -1,5 +1,5 @@
 import React from "react";
-import { render} from "@testing-library/react";
+import {fireEvent, render} from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect';
 import { UserSignUpPage } from './UserSignupPage';
 
@@ -45,5 +45,19 @@ describe('UserSignUpPage', () => {
             const button = container.querySelector('button');
             expect(button).toBeInTheDocument()
         })
+    });
+    describe('Interactions', () => {
+        it('sets the displayName value into state', () => {
+            const { queryByPlaceholderText } = render(<UserSignUpPage />);
+            const displayNameInput = queryByPlaceholderText('Your display name');
+            const changeEvent = {
+                target: {
+                    value: 'my-display-name'
+                }
+            }
+            fireEvent.change(displayNameInput, changeEvent);
+
+            expect(displayNameInput).toHaveValue('my-display-name');
+        });
     });
 });

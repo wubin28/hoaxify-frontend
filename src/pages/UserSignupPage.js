@@ -2,12 +2,17 @@ import React from "react";
 
 export class UserSignUpPage extends React.Component {
     state = {
-        displayName: ''
+        displayName: '',
+        username: '',
     };
 
     onChangeDisplayName = (event) => {
         const value = event.target.value;
         this.setState({displayName: value})
+    };
+    onChangeUsername = (event) => {
+        const value = event.target.value;
+        this.setState({username: value})
     };
 
     render() {
@@ -21,7 +26,9 @@ export class UserSignUpPage extends React.Component {
                     />
                 </div>
                 <div>
-                    <input placeholder="Your username"/>
+                    <input placeholder="Your username"
+                           value={this.state.username}
+                           onChange={this.onChangeUsername}/>
                 </div>
                 <div>
                     <input placeholder="Your password" type="password"/>

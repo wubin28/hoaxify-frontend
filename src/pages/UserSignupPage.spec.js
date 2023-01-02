@@ -63,5 +63,13 @@ describe('UserSignUpPage', () => {
 
             expect(displayNameInput).toHaveValue('my-display-name');
         });
+        it('sets the username value into state', () => {
+            const {queryByPlaceholderText} = render(<UserSignUpPage/>);
+            const usernameInput = queryByPlaceholderText('Your username');
+
+            fireEvent.change(usernameInput, changeEvent('my-user-name'));
+
+            expect(usernameInput).toHaveValue('my-user-name');
+        });
     });
 });
